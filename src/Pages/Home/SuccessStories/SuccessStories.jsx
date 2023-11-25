@@ -5,6 +5,7 @@ import 'swiper/css';
 
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 const SuccessStories = () => {
     const [SuccessStories, setSuccessStories] = useState([]);
@@ -16,7 +17,11 @@ const SuccessStories = () => {
     }, [])
 
     return (
-        <section className="my-20 bg-purple-200  rounded-lg">
+        <section className="my-20 bg-purple-300  rounded-lg">
+            <SectionTitle
+                subHeading="Real stories"
+                heading={'Success Stories'}
+            ></SectionTitle>
         <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> 
 
             {
@@ -25,7 +30,7 @@ const SuccessStories = () => {
                 >
                     <div className="flex flex-col items-center mx-24 my-16">
                     
-                        <h3 className="text-2xl text-orange-400">{SuccessStory.name}</h3>    
+                        <h3 className="text-2xl font-bold">{SuccessStory.name}</h3>    
                         <p className="py-8">{SuccessStory.story}</p>
                         <Rating
                                 style={{ maxWidth: 180 }}
