@@ -78,11 +78,11 @@ const Navbar = () => {
                 <p>{user?.displayName}</p>
               </div>
               <div className="gap-1 m-2" >
-                <img className="w-10 rounded-full" src={user.photoURL} alt="" />
+                <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
               </div>
             </>
           ) : (
-            <Link to="/Login">
+            <Link to="/login">
               <button className="btn">Login</button>
             </Link>
           )}
