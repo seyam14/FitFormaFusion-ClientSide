@@ -1,7 +1,9 @@
 
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const TrainerCard = ({ trainer, onKnowMoreClick }) => {
+const TrainerCard = ({ trainer }) => {
+    const {_id}=trainer;
   return (
     <div className="max-w-md mx-auto bg-white rounded-md overflow-hidden shadow-md my-8">
       <img src={trainer.image} alt='' className="w-full h-40 object-cover" />
@@ -25,9 +27,12 @@ const TrainerCard = ({ trainer, onKnowMoreClick }) => {
             <li key={index}>{slot}</li>
           ))}
         </ul>
-        <button onClick={() => onKnowMoreClick(trainer)} className="mt-4 bg-purple-500 text-white px-4 py-2 rounded-md">
+        <Link to={`/trainerdetails/${_id}`}>
+        <button className="mt-4 bg-purple-500 text-white px-4 py-2 rounded-md">
           Know More
         </button>
+        </Link>
+        
       </div>
     </div>
   );

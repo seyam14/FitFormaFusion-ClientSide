@@ -8,6 +8,8 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import GalleryPage from "../Pages/GalleryPage/GalleryPage";
 import Trainer from "../Pages/Trainer/Trainer.JSX";
+import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails.JSX";
+
 
   export const router = createBrowserRouter([
     {
@@ -36,6 +38,13 @@ import Trainer from "../Pages/Trainer/Trainer.JSX";
             path: "/trainer",
             element: <Trainer></Trainer>
           },
+          {
+            path: "/trainerdetails/:id",
+            element:<Trainerdetails></Trainerdetails>,
+            loader: ({params}) => fetch(`http://localhost:5000/trainer/trainer/${params.id}`)
+          },
+          
+          
           
       ]
       },   
