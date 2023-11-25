@@ -38,7 +38,7 @@ const Login = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 // const user = { email };
-                
+
                 // eslint-disable-next-line no-unused-vars
                 const user = {
                     email,
@@ -49,7 +49,7 @@ const Login = () => {
                     title: 'Login Successful',
                     text: 'You have successfully logged in!',
                 });
-            // axios.post("https://b8a11-server-side-seyam14.vercel.app/jwt", 
+            // axios.post("/jwt", 
             //         { email },
             //         { withCredentials: true }
             //     )
