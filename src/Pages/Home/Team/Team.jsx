@@ -45,12 +45,6 @@ const Team = () => {
                             <FaGithub className="w-6 h-6" />
                         </a>
                         </div>
-                        <p className="text-gray-700">Available Time Slots:</p>
-                        <ul className="list-disc ml-6">
-                        {trainer.availableTimeSlots.map((slot) => (
-                            <li key={slot}>{slot}</li>
-                        ))}
-                        </ul>
                     </div>
                 </SwiperSlide>)
             }

@@ -7,6 +7,7 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import GalleryPage from "../Pages/GalleryPage/GalleryPage";
+import Trainer from "../Pages/Trainer/Trainer.JSX";
 
   export const router = createBrowserRouter([
     {
@@ -30,6 +31,10 @@ import GalleryPage from "../Pages/GalleryPage/GalleryPage";
           {
             path: "/gallery",
             element: <GalleryPage></GalleryPage>
+          },
+          {
+            path: "/trainer",
+            element: <Trainer></Trainer>
           },
           
       ]
