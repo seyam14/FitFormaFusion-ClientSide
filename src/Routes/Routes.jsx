@@ -41,7 +41,7 @@ import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails.JSX";
           {
             path: "/trainerdetails/:id",
             element:<Trainerdetails></Trainerdetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/trainer/trainer/${params.id}`)
+            loader: ({params}) => fetch(`http://localhost:5000/trainer/${params.id}`)
           },
           
           

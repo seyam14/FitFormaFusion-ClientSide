@@ -1,24 +1,7 @@
 
-import  { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
 
-const TrainerDetails = () => {
-  const { trainerId } = useParams();
-  const [trainer, setTrainer] = useState(null);
-
-  useEffect(() => {
-    const fetchTrainerDetails = async () => {
-      try {
-        const response = await fetch(`http://localhost:5000/trainer/${trainerId}`);
-        const data = await response.json();
-        setTrainer(data);
-      } catch (error) {
-        console.error('Error fetching trainer details:', error);
-      }
-    };
-
-    fetchTrainerDetails();
-  }, [trainerId]);
+const TrainerDetails = ({trainer}) => {
+ 
 
   return (
     <div className="bg-gray-200 min-h-screen">
