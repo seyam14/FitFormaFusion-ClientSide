@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from "sweetalert2";
 
 
 const Register = () => {
@@ -33,30 +34,30 @@ const Register = () => {
           const user = {name,photo, email, createdAt: createdAt };
   
           // Send user data to your server (Assuming you have a server)
-        //   fetch('/user', {
-        //     method: 'POST',
-        //     headers: {
-        //       'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(user)
-        //   })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //       if (data.insertedId) {
-        //         Swal.fire("Registration Successful!", "You are now registered.", "success");
-        //       }
-        //     })
-        //     .catch(error => {
-        //       console.error(error);
-        //     });
-        // })
-        // .catch(error => {
-        //   // Registration failed
-        //   if (error.code === 'auth/email-already-in-use') {
-        //     setRegisterError('Email is already in use. Please choose a different one.');
-        //   } else {
-        //     setRegisterError('Registration error. Please try again.');
-        //   }
+          fetch('http://localhost:5000/user', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+          })
+            .then(res => res.json())
+            .then(data => {
+              if (data.insertedId) {
+                Swal.fire("Registration Successful!", "You are now registered.", "success");
+              }
+            })
+            .catch(error => {
+              console.error(error);
+            });
+        })
+        .catch(error => {
+          // Registration failed
+          if (error.code === 'auth/email-already-in-use') {
+            setRegisterError('Email is already in use. Please choose a different one.');
+          } else {
+            setRegisterError('Registration error. Please try again.');
+          }
         });
     };
   
@@ -97,14 +98,14 @@ const Register = () => {
       return null; // Password is valid
     };
     return (
-        <div className="mb-16">
+        <div className="mb-16  bg-base-500">
           {/* <Helmet>
             <title>UEHub|Register</title>
           </Helmet> */}
         <h2 className="text-5xl font-bold text-center mt-5">Please Register</h2>
         <div className="card flex-shrink-0 mx-auto mt-6 w-full max-w-sm shadow-2xl bg-base-200">
         
-          <form onSubmit={handleRegister} className="card-body">
+          <form onSubmit={handleRegister} className="card-body bg-green-500 rounded-xl">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
