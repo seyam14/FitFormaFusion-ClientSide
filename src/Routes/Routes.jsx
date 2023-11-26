@@ -9,6 +9,7 @@ import Register from "../Pages/Register/Register";
 import GalleryPage from "../Pages/GalleryPage/GalleryPage";
 import Trainer from "../Pages/Trainer/Trainer.JSX";
 import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails.JSX";
+import BecomeTrainer from "../Pages/Trainer/BecomeTrainer/BecomeTrainer";
 
 
   export const router = createBrowserRouter([
@@ -42,6 +43,10 @@ import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails.JSX";
             path: "/trainerdetails/:id",
             element:<Trainerdetails></Trainerdetails>,
             loader: ({params}) => fetch(`http://localhost:5000/trainer/${params.id}`)
+          },
+          {
+            path: "/becometrainer",
+            element: <BecomeTrainer></BecomeTrainer>
           },
           
           
