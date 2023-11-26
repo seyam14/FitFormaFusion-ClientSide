@@ -7,8 +7,8 @@ import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import GalleryPage from "../Pages/GalleryPage/GalleryPage";
-import Trainer from "../Pages/Trainer/Trainer.JSX";
-import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails.JSX";
+import Trainer from "../Pages/Trainer/Trainer"
+import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails";
 import BecomeTrainer from "../Pages/Trainer/BecomeTrainer/BecomeTrainer";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
@@ -38,7 +38,7 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
           },
           {
             path: "/trainer",
-            element: <Trainer></Trainer>
+            element:<Trainer></Trainer>
           },
           {
             path: "/trainerdetails/:id",
