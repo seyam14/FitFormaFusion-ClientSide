@@ -11,6 +11,8 @@ import Trainer from "../Pages/Trainer/Trainer"
 import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails";
 import BecomeTrainer from "../Pages/Trainer/BecomeTrainer/BecomeTrainer";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
+import UserBookedPage from "../Pages/Trainer/UserBookedPage/UserBookedPage";
+
 
 
   export const router = createBrowserRouter([
@@ -47,9 +49,14 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
           },
           {
             path: "/becometrainer",
-            element:<PrivateRoute><BecomeTrainer></BecomeTrainer></PrivateRoute>
-             
+            element:<PrivateRoute><BecomeTrainer></BecomeTrainer></PrivateRoute>   
           },
+          {
+            path: "/userbooked",
+            element:<UserBookedPage></UserBookedPage>  
+          },
+  
+
           
           
           

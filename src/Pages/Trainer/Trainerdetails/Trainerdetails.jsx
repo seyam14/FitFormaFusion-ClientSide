@@ -60,7 +60,7 @@ const TrainerDetails = () => {
         </div>
       </div>
       <div className="justify-center flex m-6">
-        <Link to={'/becometrainer'}> <button className="btn btn-Secondary">Become a Trainer</button>  </Link>
+        <Link to={'/becometrainer'}> <button className="btn btn-secondary">Become a Trainer</button>  </Link>
         </div>
     </div>
 
