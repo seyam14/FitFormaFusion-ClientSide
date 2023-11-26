@@ -1,9 +1,12 @@
+import AllClassesSection from "./AllClassesSection/AllClassesSection";
+import WeeklyscheduleSection from "./WeeklyscheduleSection/WeeklyscheduleSection";
 
 
 const Classes = () => {
     return (
         <div>
-            <h2>this is class page</h2>
+           <WeeklyscheduleSection></WeeklyscheduleSection>
+           <AllClassesSection></AllClassesSection>
         </div>
     );
 };
