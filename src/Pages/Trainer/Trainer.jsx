@@ -14,7 +14,7 @@ const Trainer = () => {
           const data = await response.json();
           setTrainers(data);
         } catch (error) {
-          console.error('Error fetching trainers:', error);
+          console.log('Error fetching trainers:', error);
         }
       };
   
