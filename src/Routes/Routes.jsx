@@ -10,6 +10,7 @@ import GalleryPage from "../Pages/GalleryPage/GalleryPage";
 import Trainer from "../Pages/Trainer/Trainer.JSX";
 import Trainerdetails from "../Pages/Trainer/Trainerdetails/Trainerdetails.JSX";
 import BecomeTrainer from "../Pages/Trainer/BecomeTrainer/BecomeTrainer";
+import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 
 
   export const router = createBrowserRouter([
@@ -46,7 +47,8 @@ import BecomeTrainer from "../Pages/Trainer/BecomeTrainer/BecomeTrainer";
           },
           {
             path: "/becometrainer",
-            element: <BecomeTrainer></BecomeTrainer>
+            element:<PrivateRoute><BecomeTrainer></BecomeTrainer></PrivateRoute>
+             
           },
           
           
