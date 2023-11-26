@@ -22,11 +22,13 @@ const TrainerCard = ({ trainer }) => {
           </a>
         </div>
         <p className="text-gray-700">Available Time Slots:</p>
-        <ul className="list-disc ml-6">
+        <Link>
+        <ul className="list-disc ml-6 text-blue-500">
           {trainer.availableTimeSlots.map((slot, index) => (
             <li key={index}>{slot}</li>
           ))}
         </ul>
+        </Link>
         <Link to={`/trainerdetails/${_id}`}>
         <button className="mt-4 bg-purple-500 text-white px-4 py-2 rounded-md">
           Know More
