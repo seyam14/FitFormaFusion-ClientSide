@@ -53,7 +53,7 @@ import UserBookedPage from "../Pages/Trainer/UserBookedPage/UserBookedPage";
           },
           {
             path: "/userbooked",
-            element:<UserBookedPage></UserBookedPage>  
+            element:<PrivateRoute><UserBookedPage></UserBookedPage></PrivateRoute>  
           },
   
 
