@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 
 const TrainersTable = ({item}) => {
     console.log(item);
-    const {image, name, role,yearsOfExperience} = item;
+    const {image, name, role,yearsOfExperience, salary} = item;
     console.log(item);
       return (
     
@@ -11,6 +12,10 @@ const TrainersTable = ({item}) => {
           <td>{name}</td>
           <td>{role}</td>
            <td>{yearsOfExperience}</td>
+           <td> ${salary}</td>
+           <Link to='/dashboard/payment'>
+           <button className="btn btn-secondary m-2">Pay </button>
+           </Link>
         </tr>
      
       );

@@ -23,8 +23,9 @@ const AllTrainers = () => {
           <tr>
             <th>image</th> 
             <th>Name</th>
-            <th>Role</th>
+            <th>Class</th>
             <th>Years Of Experience</th>
+            <th>Monthly salary</th>
           </tr>
         </thead>
         <tbody>
