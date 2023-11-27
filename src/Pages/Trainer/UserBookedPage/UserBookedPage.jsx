@@ -11,7 +11,7 @@ const UserBookedPage = () => {
           <li>Cardio Class on Fridays</li>
           <li>Access to Gym Facilities</li>
         </ul>
-        <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md">
+        <button className="mt-20 bg-blue-500 text-white px-4 py-2 rounded-md">
           Join Now
         </button>
       </div>
@@ -19,14 +19,14 @@ const UserBookedPage = () => {
       <div className="flex flex-col mb-8 p-6 border rounded-md bg-gray-100 text-center">
         <h3 className="text-xl font-bold mb-2">Gold Plan</h3>
         <p className="font-semibold">Includes:</p>
-        <ul className="list-disc ml-6 text-gray-700">
+        <ul className="list-disc ml-6 text-gray-700 text-sm">
           <li>Yoga Class on Mondays and Wednesdays</li>
           <li>Cardio Class on Fridays</li>
           <li>Strength Training on Tuesdays and Thursdays</li>
           <li>Access to Gym Facilities</li>
           <li>Nutrition Counseling</li>
         </ul>
-        <button className="mt-4 bg-yellow-500 text-white px-4 py-2 rounded-md">
+        <button className="mt-10 bg-yellow-500 text-white px-4 py-2 rounded-md">
           Join Now
         </button>
       </div>
