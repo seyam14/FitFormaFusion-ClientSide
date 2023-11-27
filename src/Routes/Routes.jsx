@@ -18,6 +18,7 @@ import Dashboard from "../Layout/Dashboard/Dashboard";
 import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
 import Allsubscribers from "../Pages/Dashboard/Allsubscribers/Allsubscribers";
+import AllTrainers from "../Pages/Dashboard/AllTrainers/AllTrainers";
 // import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
@@ -91,6 +92,10 @@ import Allsubscribers from "../Pages/Dashboard/Allsubscribers/Allsubscribers";
             {
               path: 'subscribers',
               element: <Allsubscribers></Allsubscribers>
+            },
+            {
+              path: 'trainers',
+              element: <AllTrainers></AllTrainers>
             },
             // {
             //   path: 'users',
