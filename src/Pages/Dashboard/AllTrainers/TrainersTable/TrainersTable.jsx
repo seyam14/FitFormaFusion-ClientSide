@@ -7,7 +7,7 @@ const TrainersTable = ({item}) => {
       return (
     
         <tr>
-          <img className="w-20 h-20" src={image} alt="" />
+          <img className="w-12 h-12 m-2" src={image} alt="" />
           <td>{name}</td>
           <td>{role}</td>
            <td>{yearsOfExperience}</td>
