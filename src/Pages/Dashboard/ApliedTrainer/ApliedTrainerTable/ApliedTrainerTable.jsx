@@ -1,18 +1,41 @@
 import { useState } from 'react';
 import { FaEye } from 'react-icons/fa';
 
-const ApliedTrainerTable = ({ item }) => {
+const ApliedTrainerTable = ({ item, onConfirmation }) => {
   const [confirmation, setConfirmation] = useState(false);
   const [rejection, setRejection] = useState(false);
 
-  const { fullName, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills,role } = item;
+  const { fullName, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills, role } = item;
 
   const handleConfirmation = () => {
+    // Assuming you have a function to update the role
+    // You can replace this with your actual logic
+    updateRole();
+
+    // Inform the parent component about the confirmation
+    onConfirmation(role);
+
     setConfirmation(true);
   };
 
   const handleRejection = () => {
+    // Assuming you have a function to send an email to the user
+    // You can replace this with your actual logic
+    sendEmailToUser();
+
     setRejection(true);
+  };
+
+  // Function to update role
+  const updateRole = () => {
+    // Your logic to update the role (replace 'member' with 'Trainer' for example)
+    // ...
+  };
+
+  // Function to send an email to the user
+  const sendEmailToUser = () => {
+    // Your logic to send an email to the user
+    // ...
   };
 
   return (
@@ -32,8 +55,8 @@ const ApliedTrainerTable = ({ item }) => {
           <p className="py-2">Available Time in a week: {AvailableTimeinaweek}</p>
           <p className="py-2">Available Time in a day: {AvailableTimeinaday}</p>
           <div className="modal-action">
-          <form method="dialog">
-            <button className="btn">Close</button>
+            <form method="dialog">
+              <button className="btn">Close</button>
             </form>
             <button className="btn btn-success mr-10" onClick={handleConfirmation}>
               Confirm
