@@ -17,6 +17,7 @@ const BecomeTrainer = () => {
       PhotoURL: form.get("PhotoURL"),
       AvailableTimeinaweek: form.get("AvailableTimeinaweek"),
       AvailableTimeinaday: form.get("AvailableTimeinaday"),
+      role : "member"
     };
     console.log(BecomeTrainer);
 
