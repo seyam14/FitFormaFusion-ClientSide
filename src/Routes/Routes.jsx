@@ -13,6 +13,7 @@ import BecomeTrainer from "../Pages/Trainer/BecomeTrainer/BecomeTrainer";
 import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import UserBookedPage from "../Pages/Trainer/UserBookedPage/UserBookedPage";
 import Classes from "../Pages/Classes/Classes.JSX";
+import Forum from "../Pages/Forum/Forum";
 
 
 
@@ -60,6 +61,11 @@ import Classes from "../Pages/Classes/Classes.JSX";
             path: "/classes",
             element: <Classes></Classes>
           },
+          {
+            path: "/forum",
+            element: <Forum></Forum>
+          },
+  
   
           
           

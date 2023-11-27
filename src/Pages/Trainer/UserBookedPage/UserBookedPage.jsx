@@ -1,7 +1,12 @@
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 const UserBookedPage = () => {
   return (
+    <div><SectionTitle
+      subHeading=" Packages"
+      heading="Choose Your plan"
+    ></SectionTitle>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-w-3xl mx-auto bg-white rounded-md overflow-hidden shadow-md my-4 p-4">
       <div className="flex flex-col mb-8 p-6 border rounded-md bg-gray-100 text-center">
         <h3 className="text-xl font-bold mb-2 ">Silver Plan</h3>
@@ -45,6 +50,7 @@ const UserBookedPage = () => {
           Join Now
         </button>
       </div>
+    </div>
     </div>
   );
 };
