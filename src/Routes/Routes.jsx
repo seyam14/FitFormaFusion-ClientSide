@@ -14,6 +14,12 @@ import PrivateRoute from "../Pages/PrivateRoute/PrivateRoute";
 import UserBookedPage from "../Pages/Trainer/UserBookedPage/UserBookedPage";
 import Classes from "../Pages/Classes/Classes.JSX";
 import Forum from "../Pages/Forum/Forum";
+import Dashboard from "../Layout/Dashboard/Dashboard";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../Pages/Dashboard/AdminHome/AdminHome";
+import Allsubscribers from "../Pages/Dashboard/Allsubscribers/Allsubscribers";
+// import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+
 
 
 
@@ -64,12 +70,35 @@ import Forum from "../Pages/Forum/Forum";
           {
             path: "/forum",
             element: <Forum></Forum>
+          },     
+      ]
+      },  
+      {
+        path: "dashboard",
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+        children: [
+          {
+            path: 'userHome',
+            element: <UserHome></UserHome>
           },
   
   
-          
-          
-          
-      ]
-      },   
+            // admin 
+            {
+              path: 'adminHome',
+              element: <AdminHome></AdminHome>
+            },
+            {
+              path: 'subscribers',
+              element: <Allsubscribers></Allsubscribers>
+            },
+            // {
+            //   path: 'users',
+            //   element: <AllUsers></AllUsers>
+              
+            // },
+            
+
+        ],
+      }, 
 ]);

@@ -9,14 +9,22 @@ import {
 import AuthProvider from './AuthProvider/AuthProvider';
 import { router } from './Routes/Routes';
 
+import {
+  QueryClient,
+  QueryClientProvider
+  // useQuery,
+} from '@tanstack/react-query'
 
+const queryClient = new QueryClient()
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-<div  className='max-w-6xl mx-auto '>
   <React.StrictMode>
-    <AuthProvider>
-    <RouterProvider router={router} />
-    </AuthProvider>
-  </React.StrictMode>
-  </div>
+  <AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <div className='max-w-6xl mx-auto'>
+        <RouterProvider router={router} />
+      </div>
+    </QueryClientProvider>
+  </AuthProvider>
+</React.StrictMode>,
 )
