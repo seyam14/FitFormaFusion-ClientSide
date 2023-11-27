@@ -5,7 +5,7 @@ const ApliedTrainerTable = ({ item }) => {
   const [confirmation, setConfirmation] = useState(false);
   const [rejection, setRejection] = useState(false);
 
-  const { fullName, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills } = item;
+  const { fullName, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills,role } = item;
 
   const handleConfirmation = () => {
     setConfirmation(true);
@@ -19,7 +19,7 @@ const ApliedTrainerTable = ({ item }) => {
     <tr className="m-6">
       <td>{fullName}</td>
       <td>{email}</td>
-      <td> {age}</td>
+      <td> {role}</td>
       <button className="btn " onClick={() => document.getElementById('my_modal_1').showModal()}>
         <FaEye />
       </button>

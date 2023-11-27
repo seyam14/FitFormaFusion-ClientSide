@@ -22,7 +22,7 @@ const ApliedTrainer = () => {
       <tr>
         <th>FullName</th> 
         <th>E-mail</th>
-        <th>Age</th>
+        <th>Role</th>
       </tr>
     </thead>
     <tbody>
