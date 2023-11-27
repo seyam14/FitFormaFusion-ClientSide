@@ -6,8 +6,8 @@ import TrainersTable from "./TrainersTable/TrainersTable";
 
 const AllTrainers = () => {
     const [data, setData] = useState([]);
-        useEffect(() => {
     
+        useEffect(() => {
             axios.get('http://localhost:5000/trainer')
                 .then(res => setData(res.data))
         }, [])

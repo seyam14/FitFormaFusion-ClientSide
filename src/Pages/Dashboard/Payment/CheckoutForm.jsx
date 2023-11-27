@@ -16,14 +16,14 @@ const CheckoutForm = () => {
     const { user } = useAuth();
 
     useEffect(() => {
-            axios.post('http://localhost:5000/create-payment-intent', )
-                .then(res => {
-                    console.log(res.data.clientSecret);
-                    setClientSecret(res.data.clientSecret);
-                })
+        axios.post('http://localhost:5000/createPayMentintent', )
+            .then(res => {
+                console.log(res.data.clientSecret);
+                setClientSecret(res.data.clientSecret);
+            })
 
 
-    }, [])
+}, [])
 
     
     const handleSubmit = async (event) => {
