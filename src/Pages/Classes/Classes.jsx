@@ -1,11 +1,12 @@
 import AllClassesSection from "./AllClassesSection/AllClassesSection";
-import WeeklyscheduleSection from "./WeeklyscheduleSection/WeeklyscheduleSection";
+import GymSchedule from "./GymSchedule/GymSchedule";
+
 
 
 const Classes = () => {
     return (
         <div>
-           <WeeklyscheduleSection></WeeklyscheduleSection>
+           <GymSchedule></GymSchedule>
            <AllClassesSection></AllClassesSection>
         </div>
     );
