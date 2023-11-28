@@ -37,7 +37,7 @@ const AllClassesSection = () => {
           classesData.map((classInfo) => (
             <div key={classInfo.id} className="border p-4 cursor-pointer">
               <h2 className="text-lg font-semibold mb-2"> <span className='text-blue-500'>Trainer name: </span>{classInfo.name}</h2>
-              <p> <span className='text-blue-500'>Class: </span>{classInfo.role}</p>
+              <p> <span className='text-blue-500'>Class: </span>{classInfo.skills}</p>
               <Link to='/trainer'>
               <button className="bg-blue-500 text-white px-4 py-2 mt-2" >
                 Join Now

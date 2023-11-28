@@ -10,7 +10,8 @@ const BecomeTrainer = () => {
         e.preventDefault();
     const form = new FormData(e.currentTarget);
     const BecomeTrainer = {
-        fullName: form.get("fullName"),
+        
+         name: form.get("name"),
         email: form.get("email"),
        age: form.get("age"),
        Skills: form.getAll("Skills[]"),
@@ -65,7 +66,7 @@ const BecomeTrainer = () => {
                         <span className="label-text">Full Name</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="fullName" placeholder="fullName" className="input input-bordered w-full" />
+                        <input type="text" name="name" placeholder="name" className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>

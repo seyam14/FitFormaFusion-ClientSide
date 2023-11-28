@@ -5,11 +5,16 @@ import ApliedTrainerTable from "./ApliedTrainerTable/ApliedTrainerTable";
 
 const ApliedTrainer = () => {
     const [data, setData] = useState([]);
+    const [reloadData, setReloaddata] = useState(true);
     
     useEffect(() => {
         axios.get('http://localhost:5000/becomeTrainer')
             .then(res => setData(res.data))
     }, [])
+
+    const reFetch = () => {
+      setReloaddata(!reloadData)
+  }
 
     console.log(data);
     return (
@@ -29,7 +34,7 @@ const ApliedTrainer = () => {
       {/* row 1 */}
      
             {
-                data?.map((item) => <ApliedTrainerTable key={item._id} item={item}></ApliedTrainerTable> )
+                data?.map((item) => <ApliedTrainerTable key={item._id} item={item} reFetch={reFetch}></ApliedTrainerTable> )
             }
 
 </tbody>

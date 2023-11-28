@@ -34,7 +34,7 @@ const TrainerDetails = () => {
         <div>
         <div className="p-6">
           <h2 className="text-2xl font-bold text-gray-800 mb-3">{myData.name}</h2>
-          <p className="text-gray-600 mb-4">{myData.role}</p>
+          <p className="text-gray-600 mb-4">{myData.skills}</p>
           <p className="text-gray-700"> Years of Experience:{myData.yearsOfExperience}</p>
           <div className="mb-4">
           <p className="text-gray-700">Available Time Slots:</p>

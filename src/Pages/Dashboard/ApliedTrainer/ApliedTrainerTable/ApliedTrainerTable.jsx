@@ -1,54 +1,38 @@
-import { useState } from 'react';
+
+import axios from 'axios';
 import { FaEye } from 'react-icons/fa';
+import Swal from 'sweetalert2';
 
-const ApliedTrainerTable = ({ item, onConfirmation }) => {
-  const [confirmation, setConfirmation] = useState(false);
-  const [rejection, setRejection] = useState(false);
+const ApliedTrainerTable = ({ item,reFetch }) => {
 
-  const { fullName, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills, role } = item;
 
-  const handleConfirmation = () => {
-    // Assuming you have a function to update the role
-    // You can replace this with your actual logic
-    updateRole();
+  const {_id, name, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills, role } = item;
 
-    // Inform the parent component about the confirmation
-    onConfirmation(role);
-
-    setConfirmation(true);
-  };
-
-  const handleRejection = () => {
-    // Assuming you have a function to send an email to the user
-    // You can replace this with your actual logic
-    sendEmailToUser();
-
-    setRejection(true);
-  };
-
-  // Function to update role
-  const updateRole = () => {
-    // Your logic to update the role (replace 'member' with 'Trainer' for example)
-    // ...
-  };
-
-  // Function to send an email to the user
-  const sendEmailToUser = () => {
-    // Your logic to send an email to the user
-    // ...
-  };
+  const handleConfirmation = async() => {
+    const res = await axios.patch(`http://localhost:5000/becomeTrainer/${_id}`);
+    console.log(res.data);
+    reFetch();
+    Swal.fire({
+     title: 'Success!',
+     text: 'Trainer confirmation Successfully',
+     icon: 'success',
+     confirmButtonText: 'Cool'
+ })
+     
+   };
 
   return (
     <tr className="m-6">
-      <td>{fullName}</td>
+      <td>{name}</td>
       <td>{email}</td>
       <td> {role}</td>
-      <button className="btn " onClick={() => document.getElementById('my_modal_1').showModal()}>
+
+      <button className="btn " onClick={() => document.getElementById(`modal${_id}`).showModal()}>
         <FaEye />
       </button>
-      <dialog id="my_modal_1" className="modal">
+      <dialog id={`modal${_id}`} className="modal">
         <div className="modal-box text-center">
-          <h3 className="font-bold text-lg"> Name: {fullName}</h3>
+          <h3 className="font-bold text-lg"> Name: {name}</h3>
           <p className="py-2">E-mail: {email}</p>
           <p className="py-2">Age: {age}</p>
           <p className="py-2">Skills: {Skills}</p>
@@ -58,17 +42,17 @@ const ApliedTrainerTable = ({ item, onConfirmation }) => {
             <form method="dialog">
               <button className="btn">Close</button>
             </form>
-            <button className="btn btn-success mr-10" onClick={handleConfirmation}>
+            <button onClick={handleConfirmation} className="btn btn-success mr-10" >
               Confirm
             </button>
-            <button className="btn btn-error" onClick={handleRejection}>
+            <button className="btn btn-error" >
               Reject
             </button>
           </div>
         </div>
       </dialog>
-      {confirmation && <p>User confirmed and status updated.</p>}
-      {rejection && <p>Email sent to the user.</p>}
+      
+
     </tr>
   );
 };
