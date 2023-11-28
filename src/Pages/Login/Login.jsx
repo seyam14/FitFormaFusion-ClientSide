@@ -27,7 +27,7 @@ const Login = () => {
             .then(res =>{
                 console.log(res.data);
                 Swal.fire("Login Successful!", "You are now logged in.", "success");
-                Navigate(location?.state ? location.state: '/')
+                Navigate('/');
             })
             // 
             
