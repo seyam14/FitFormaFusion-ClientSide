@@ -6,6 +6,7 @@ import { FaSackDollar } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from '../../Component/Hooks/useAdmin';
 import useTrainer from '../../Component/Hooks/useTrainer';
+import { Helmet } from 'react-helmet';
 
 
 
@@ -17,6 +18,9 @@ const Dashboard = () => {
 
     return (
         <div className="flex">
+     <Helmet>
+        <title>FitFF|Dashboard</title>
+     </Helmet> 
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-purple-400">
                 <ul className="menu p-4">

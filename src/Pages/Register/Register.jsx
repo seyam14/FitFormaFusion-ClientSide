@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -99,9 +100,9 @@ const Register = () => {
     };
     return (
         <div className="mb-16  bg-base-500">
-          {/* <Helmet>
-            <title>UEHub|Register</title>
-          </Helmet> */}
+         <Helmet>
+        <title>FitFF|Register</title>
+       </Helmet> 
         <h2 className="text-5xl font-bold text-center mt-5">Please Register</h2>
         <div className="card flex-shrink-0 mx-auto mt-6 w-full max-w-sm shadow-2xl bg-base-200">
         
