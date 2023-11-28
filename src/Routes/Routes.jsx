@@ -25,6 +25,7 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
 import ActivityLog from "../Pages/Dashboard/ActivityLog/ActivityLog";
 import UserProfileSettings from "../Pages/Dashboard/UserProfileSettings/UserProfileSettings";
+import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/RecommendedClasses";
 
 
 
@@ -98,7 +99,7 @@ import UserProfileSettings from "../Pages/Dashboard/UserProfileSettings/UserProf
           },
           {
             path: 'classes',
-            element: <ActivityLog></ActivityLog>
+            element: <RecommendedClasses></RecommendedClasses>
           },
   
   
