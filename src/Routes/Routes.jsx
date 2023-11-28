@@ -118,7 +118,7 @@ import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/Recommende
               element:<AdminRoute><AllTrainers></AllTrainers></AdminRoute> 
             },
             {
-              path: 'payment',
+              path: 'payment/:_id/:salary',
               element:<AdminRoute><Payment></Payment></AdminRoute>
             },
             {

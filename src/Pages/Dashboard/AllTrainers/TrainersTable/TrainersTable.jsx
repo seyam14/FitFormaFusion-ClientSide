@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 
 const TrainersTable = ({item}) => {
     console.log(item);
-    const {image, name,yearsOfExperience, salary,skills} = item;
+    const {_id,image, name,yearsOfExperience, salary,skills} = item;
+    console.log(_id);
     console.log(item);
       return (
     
@@ -13,7 +14,7 @@ const TrainersTable = ({item}) => {
           <td>{skills}</td>
            <td>{yearsOfExperience}</td>
            <td> ${salary}</td>
-           <Link to='/dashboard/payment'>
+           <Link to={`/dashboard/payment/${item._id}/${item.salary}`}>
            <button className="btn btn-secondary m-2">Pay </button>
            </Link>
         </tr>
