@@ -3,6 +3,7 @@ import useAxios from "../../../Component/Hooks/useAxios";
 // import Swal from "sweetalert2";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 const AllUsers = () => {
@@ -62,8 +63,11 @@ const AllUsers = () => {
 
     return (
         <div>
+             <SectionTitle
+                subHeading="users Information"
+                heading="All User"
+            ></SectionTitle> 
             <div className="flex justify-evenly my-4">
-                <h2 className="text-3xl">All Users</h2>
                 <h2 className="text-3xl">Total Users: {users.length}</h2>
             </div>
             <div className="overflow-x-auto">

@@ -23,6 +23,7 @@ import Payment from "../Pages/Dashboard/Payment/Payment";
 import ApliedTrainer from "../Pages/Dashboard/ApliedTrainer/ApliedTrainer";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
+import ActivityLog from "../Pages/Dashboard/ActivityLog/ActivityLog";
 
 
 
@@ -85,6 +86,10 @@ import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
             path: 'userHome',
             element: <UserHome></UserHome>
           },
+          {
+            path: 'activity',
+            element: <ActivityLog></ActivityLog>
+          },
   
   
             // admin 
@@ -115,8 +120,6 @@ import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
               element:<AdminRoute><AllUsers></AllUsers></AdminRoute> 
               
             },
-            
-
         ],
       }, 
 ]);
