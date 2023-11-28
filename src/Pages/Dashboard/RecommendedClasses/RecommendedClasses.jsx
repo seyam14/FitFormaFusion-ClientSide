@@ -24,7 +24,7 @@ const RecommendedClasses = () => {
       <ul className="m-8 space-y-2">
         {recommendedClasses.map((course) => (
           <li key={course.id} className="flex items-center">
-            <h2 className="font-semibold">{course.role}</h2>
+            <h2 className="font-semibold">{course.skills}</h2>
             <br />
             <h2 className="ml-2">- <span className='text-blue-700'> Instructor:</span> {course.name}</h2>
           </li>
