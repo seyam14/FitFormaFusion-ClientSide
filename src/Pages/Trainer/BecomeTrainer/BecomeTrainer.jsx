@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { useContext } from "react";
+import { Helmet } from "react-helmet";
 
 
 const BecomeTrainer = () => {
@@ -49,6 +50,9 @@ const BecomeTrainer = () => {
 
     return (
         <div className="bg-purple-300 p-24 m-4 rounded-xl">
+         <Helmet>
+        <title>FitFF|Apply</title>
+     </Helmet>   
     
         <h2 className="text-3xl font-extrabold  text-center">Become a Trainer </h2>
         

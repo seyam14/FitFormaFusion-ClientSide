@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import SectionTitle from '../../Component/SectionTitle/SectionTitle';
+import { Helmet } from 'react-helmet';
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -78,6 +79,9 @@ const Forum = () => {
 
   return (
     <div>
+       <Helmet>
+        <title>FitFF|Forum</title>
+     </Helmet> 
       <SectionTitle
         subHeading="Community Dialogues: Explore, Learn, Connect"
         heading="Forum"

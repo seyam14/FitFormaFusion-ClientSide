@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import About from "./About/About";
 import Banner from "./Banner/Banner";
 import Features from "./Features/Features";
@@ -10,6 +11,9 @@ import Team from "./Team/Team";
 const Home = () => {
     return (
         <div>
+            <Helmet>
+                <title>FitFF|Home</title>
+            </Helmet>
             <Banner></Banner>
             <Features></Features>
             <About></About>

@@ -1,9 +1,15 @@
+import { Helmet } from "react-helmet";
 import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 const UserBookedPage = () => {
   return (
-    <div><SectionTitle
+    <div>
+      <Helmet>
+        <title>FitFF|Booked</title>
+     </Helmet>
+      
+      <SectionTitle
       subHeading=" Packages"
       heading="Choose Your plan"
     ></SectionTitle>

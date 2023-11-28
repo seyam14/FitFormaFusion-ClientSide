@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { FaLinkedin, FaTwitter, FaGithub } from 'react-icons/fa';
+import { Helmet } from "react-helmet";
 
 
 const TrainerDetails = () => {
@@ -26,6 +27,9 @@ const TrainerDetails = () => {
 
   return ( 
     <div className=" mx-auto mt-9">
+      <Helmet>
+        <title>FitFF|Details</title>
+     </Helmet>
         <div key={myData._id} className="bg-white  flex overflow-hidden shadow rounded-lg">
         <div className="flex">
         <div>

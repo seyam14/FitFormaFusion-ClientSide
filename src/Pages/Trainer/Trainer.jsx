@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import TrainerCard from "./TrainerCard/TrainerCard";
 import SectionTitle from "../../Component/SectionTitle/SectionTitle";
+import { Helmet } from "react-helmet";
 
 
 
@@ -28,7 +29,11 @@ const Trainer = () => {
     };
   
     return (
-      <div><SectionTitle
+      <div>
+         <Helmet>
+            <title>FitFF|Trainer</title>
+        </Helmet>
+        <SectionTitle
       subHeading="Meet Our Expert Trainers: Dedicated Professionals Guiding Your Fitness Journey"
       heading="Trainer Profiles"
     ></SectionTitle>
