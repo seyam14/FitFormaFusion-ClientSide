@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import Swal from "sweetalert2";
 import {FaGoogle } from "react-icons/fa";
+import axios from "axios";
 
 
 const Login = () => {
@@ -17,8 +18,20 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
-            Swal.fire("Login Successful!", "You are now logged in.", "success");
-            Navigate(location?.state ? location.state: '/')
+            // 
+            const userInfo = {
+                email: result.user?.email,
+                name: result.user?.displayName
+            }
+            axios.post('http://localhost:5000/user', userInfo)
+            .then(res =>{
+                console.log(res.data);
+                Swal.fire("Login Successful!", "You are now logged in.", "success");
+                Navigate(location?.state ? location.state: '/')
+            })
+            // 
+            
+            
           })
           // eslint-disable-next-line no-unused-vars
           .catch(error =>{
