@@ -24,6 +24,8 @@ import ApliedTrainer from "../Pages/Dashboard/ApliedTrainer/ApliedTrainer";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
 import ActivityLog from "../Pages/Dashboard/ActivityLog/ActivityLog";
+import UserProfileSettings from "../Pages/Dashboard/UserProfileSettings/UserProfileSettings";
+
 
 
 
@@ -88,6 +90,14 @@ import ActivityLog from "../Pages/Dashboard/ActivityLog/ActivityLog";
           },
           {
             path: 'activity',
+            element: <ActivityLog></ActivityLog>
+          },
+          {
+            path: 'settings',
+            element: <UserProfileSettings></UserProfileSettings>
+          },
+          {
+            path: 'classes',
             element: <ActivityLog></ActivityLog>
           },
   
