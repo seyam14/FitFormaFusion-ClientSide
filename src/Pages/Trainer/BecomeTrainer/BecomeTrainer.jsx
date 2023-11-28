@@ -13,11 +13,13 @@ const BecomeTrainer = () => {
         
          name: form.get("name"),
         email: form.get("email"),
-       age: form.get("age"),
-       Skills: form.getAll("Skills[]"),
-      PhotoURL: form.get("PhotoURL"),
+       age: form.get("age"), 
+       salary: form.get("salary"), 
+      skills: form.getAll("skills[]"),
+      image: form.get("image"),
       AvailableTimeinaweek: form.get("AvailableTimeinaweek"),
       AvailableTimeinaday: form.get("AvailableTimeinaday"),
+      yearsOfExperience: form.get("yearsOfExperience"),
       role : "memeber"
     };
     console.log(BecomeTrainer);
@@ -88,7 +90,7 @@ const BecomeTrainer = () => {
                         <label className="inline-flex items-center mt-3 mr-3">
                             <input
                                 type="checkbox"
-                                name="Skills[]"
+                                name="skills[]"
                                 value="Weightlifting"
                                 className="form-checkbox h-5 w-5 text-blue-600"
                             />
@@ -97,7 +99,7 @@ const BecomeTrainer = () => {
                         <label className="inline-flex items-center mt-3 mr-3">
                             <input
                                 type="checkbox"
-                                name="Skills[]"
+                                name="skills[]"
                                 value="Cardio"
                                 className="form-checkbox h-5 w-5 text-blue-600"
                             />
@@ -106,7 +108,7 @@ const BecomeTrainer = () => {
                         <label className="inline-flex items-center mt-3">
                             <input
                                 type="checkbox"
-                                name="Skills[]"
+                                name="skills[]"
                                 value="Yoga"
                                 className="form-checkbox h-5 w-5 text-blue-600"
                             />
@@ -125,7 +127,15 @@ const BecomeTrainer = () => {
                         <span className="label-text"> Photo URL</span>
                     </label>
                     <label className="input-group">
-                        <input type="text" name="PhotoURL" placeholder="Photo URL" className="input input-bordered w-full" />
+                        <input type="text" name="image" placeholder="image" className="input input-bordered w-full" />
+                    </label>
+                </div>
+                <div className="form-control md:w-1/2 ml-4">
+                    <label className="label">
+                        <span className="label-text"> salary</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="num" name="salary" placeholder="salary" className="input input-bordered w-full" />
                     </label>
                 </div>
                 
@@ -146,6 +156,17 @@ const BecomeTrainer = () => {
                     </label>
                     <label className="input-group">
                         <input type="text" name="AvailableTimeinaday" placeholder="Available Time in a day"  className="input input-bordered w-full" />
+                    </label>
+                </div>
+            </div>
+            {/*  */}
+            <div className="md:flex mb-8">
+                <div className="form-control ">
+                    <label className="label">
+                        <span className="label-text">Years Of Experience</span>
+                    </label>
+                    <label className="input-group">
+                        <input type="text" name="yearsOfExperience" placeholder="yearsOfExperience" className="input input-bordered w-full" />
                     </label>
                 </div>
             </div>
