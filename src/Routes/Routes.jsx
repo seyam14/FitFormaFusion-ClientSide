@@ -26,6 +26,7 @@ import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
 import ActivityLog from "../Pages/Dashboard/ActivityLog/ActivityLog";
 import UserProfileSettings from "../Pages/Dashboard/UserProfileSettings/UserProfileSettings";
 import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/RecommendedClasses";
+import TrainerHome from "../Pages/Dashboard/TrainerHome/TrainerHome";
 
 
 
@@ -100,6 +101,11 @@ import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/Recommende
           {
             path: 'classes',
             element: <RecommendedClasses></RecommendedClasses>
+          },
+          // 
+          {
+            path: 'trainerHome',
+            element: <TrainerHome></TrainerHome>
           },
   
   

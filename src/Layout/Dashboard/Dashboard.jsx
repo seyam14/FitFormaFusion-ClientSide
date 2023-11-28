@@ -5,12 +5,14 @@ import { SiGoogleclassroom, SiTrainerroad, SiWheniwork } from "react-icons/si";
 import { FaSackDollar } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from '../../Component/Hooks/useAdmin';
+import useTrainer from '../../Component/Hooks/useTrainer';
 
 
 
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
+    const [isTrainer] = useTrainer();
     // const isAdmin = true;
 
     return (
@@ -51,6 +53,16 @@ const Dashboard = () => {
                                 <FaSackDollar />         
                                 Balance</NavLink>
                             </li>
+                        </>
+                        :
+                        isTrainer?
+                        <>
+                                 <li>
+                                <NavLink to="/dashboard/trainerHome">
+                                    <FaHome></FaHome>
+                                    Trainer Home</NavLink>
+                            </li>
+
                         </>
                         :
                         <>
