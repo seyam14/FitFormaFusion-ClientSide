@@ -1,3 +1,4 @@
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 // Your ActivityLog component
@@ -18,10 +19,14 @@ const ActivityLog = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Activity Log - Today's Progress</h1>
+        <SectionTitle
+                subHeading="Daily workout"
+                heading="Activity"
+            ></SectionTitle> 
+      {/* <h1 className="text-2xl font-bold mb-4">Activity Log - Today's Progress</h1> */}
 
       <div className="bg-white p-6 rounded-md shadow-md">
-        <p>Welcome </p>
+        <h1 className="text-xl text-center">Welcome </h1>
 
         <div className="mt-4">
           <strong>Current Trainer:</strong> {userData.trainerName}
