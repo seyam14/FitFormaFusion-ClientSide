@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import  { useState, useEffect, useContext } from 'react';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import axios from 'axios';
