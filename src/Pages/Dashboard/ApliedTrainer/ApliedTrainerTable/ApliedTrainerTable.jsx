@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 const ApliedTrainerTable = ({ item,reFetch }) => {
 
 
-  const {_id, name, email, age, AvailableTimeinaweek, AvailableTimeinaday, Skills, role } = item;
+  const {_id, name, email, age, AvailableTimeinaweek, AvailableTimeinaday, skills, role } = item;
 
   const handleConfirmation = async() => {
     const res = await axios.patch(`http://localhost:5000/becomeTrainer/${_id}`);
@@ -35,7 +35,7 @@ const ApliedTrainerTable = ({ item,reFetch }) => {
           <h3 className="font-bold text-lg"> Name: {name}</h3>
           <p className="py-2">E-mail: {email}</p>
           <p className="py-2">Age: {age}</p>
-          <p className="py-2">Skills: {Skills}</p>
+          <p className="py-2">Skills: {skills}</p>
           <p className="py-2">Available Time in a week: {AvailableTimeinaweek}</p>
           <p className="py-2">Available Time in a day: {AvailableTimeinaday}</p>
           <div className="modal-action">
