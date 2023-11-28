@@ -22,6 +22,7 @@ import AllTrainers from "../Pages/Dashboard/AllTrainers/AllTrainers";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import ApliedTrainer from "../Pages/Dashboard/ApliedTrainer/ApliedTrainer";
 import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AdminRoute from "../Pages/PrivateRoute/AdminRoute.JSX";
 
 
 
@@ -89,28 +90,29 @@ import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
             // admin 
             {
               path: 'adminHome',
-              element: <AdminHome></AdminHome>
+              element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+              
             },
             {
               path: 'subscribers',
-              element: <Allsubscribers></Allsubscribers>
+              element:<AdminRoute><Allsubscribers></Allsubscribers></AdminRoute> 
             },
             {
               path: 'trainers',
-              element: <AllTrainers></AllTrainers>
+              element:<AdminRoute><AllTrainers></AllTrainers></AdminRoute> 
             },
             {
               path: 'payment',
-              element:<Payment></Payment>
+              element:<AdminRoute><Payment></Payment></AdminRoute>
             },
             {
               path: 'appliedTrainer',
-              element:<ApliedTrainer></ApliedTrainer>
+              element:<AdminRoute><ApliedTrainer></ApliedTrainer></AdminRoute>
             },
 
             {
               path: 'users',
-              element: <AllUsers></AllUsers>
+              element:<AdminRoute><AllUsers></AllUsers></AdminRoute> 
               
             },
             

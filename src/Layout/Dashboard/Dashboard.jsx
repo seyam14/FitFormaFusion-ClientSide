@@ -4,13 +4,14 @@ import { RiUserSettingsFill } from "react-icons/ri";
 import { SiGoogleclassroom, SiTrainerroad, SiWheniwork } from "react-icons/si";
 import { FaSackDollar } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from '../../Component/Hooks/useAdmin';
 
 
 
 const Dashboard = () => {
 
-    // const [isAdmin] = useAdmin();
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    // const isAdmin = true;
 
     return (
         <div className="flex">
