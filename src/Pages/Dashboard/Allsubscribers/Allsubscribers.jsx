@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SubscriberTable from "./SubscriberTable/SubscriberTable";
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 const Allsubscribers = () => {
@@ -15,9 +16,13 @@ const Allsubscribers = () => {
         console.log(data);
         return (
             <div>
-                      <div className="ml-6">
+              <SectionTitle
+                subHeading="Data From Newsletter"
+                heading="subscribers"
+              ></SectionTitle>
+              <div className="ml-6">
               <div className="overflow-x-auto">
-      <table className="table">
+        <table className="table">
         {/* head */}
         <thead>
           <tr>

@@ -2,6 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import TrainersTable from "./TrainersTable/TrainersTable";
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 const AllTrainers = () => {
@@ -15,7 +16,11 @@ const AllTrainers = () => {
         console.log(data);
         return (
             <div>
-                      <div className="ml-6">
+              <SectionTitle
+                subHeading="Show Trainer Info"
+                heading="Trainers"
+              ></SectionTitle>
+                <div className="ml-6">
               <div className="overflow-x-auto">
       <table className="table">
         {/* head */}

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import ApliedTrainerTable from "./ApliedTrainerTable/ApliedTrainerTable";
+import SectionTitle from "../../../Component/SectionTitle/SectionTitle";
 
 
 const ApliedTrainer = () => {
@@ -19,6 +20,10 @@ const ApliedTrainer = () => {
     console.log(data);
     return (
         <div>
+          <SectionTitle
+                subHeading="Make trainer and Reject "
+                heading=" Maintain"
+              ></SectionTitle>
                   <div className="ml-6">
           <div className="overflow-x-auto">
   <table className="table">
