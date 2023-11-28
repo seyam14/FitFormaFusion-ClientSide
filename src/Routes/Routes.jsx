@@ -21,7 +21,7 @@ import Allsubscribers from "../Pages/Dashboard/Allsubscribers/Allsubscribers";
 import AllTrainers from "../Pages/Dashboard/AllTrainers/AllTrainers";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import ApliedTrainer from "../Pages/Dashboard/ApliedTrainer/ApliedTrainer";
-// import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
 
 
 
@@ -108,11 +108,11 @@ import ApliedTrainer from "../Pages/Dashboard/ApliedTrainer/ApliedTrainer";
               element:<ApliedTrainer></ApliedTrainer>
             },
 
-            // {
-            //   path: 'users',
-            //   element: <AllUsers></AllUsers>
+            {
+              path: 'users',
+              element: <AllUsers></AllUsers>
               
-            // },
+            },
             
 
         ],

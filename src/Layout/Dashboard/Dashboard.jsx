@@ -10,13 +10,16 @@ import { NavLink, Outlet } from "react-router-dom";
 const Dashboard = () => {
 
     // const [isAdmin] = useAdmin();
+    const isAdmin = true;
+
     return (
         <div className="flex">
             {/* dashboard side bar */}
             <div className="w-64 min-h-screen bg-purple-400">
                 <ul className="menu p-4">
-                    {/* {
-                        isAdmin ? <> */}
+                    {
+                        isAdmin ?
+                         <>
                             <li>
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
@@ -47,9 +50,9 @@ const Dashboard = () => {
                                 <FaSackDollar />         
                                 Balance</NavLink>
                             </li>
-                        {/* </>
-                            : */}
-                            <>
+                        </>
+                        :
+                        <>
                                 <li>
                                     <NavLink to="/dashboard/userHome">
                                     <FaHome></FaHome>
@@ -70,8 +73,8 @@ const Dashboard = () => {
                                     <SiGoogleclassroom />
                                     Classes</NavLink>
                                 </li>
-                            </>
-                    {/* } */}
+                        </>
+                     } 
                     {/* shared nav links */}
                     <div className="divider"></div>
                     <li>

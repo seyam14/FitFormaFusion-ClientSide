@@ -1,13 +1,14 @@
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import useAxios from "../../../Component/Hooks/useAxios";
-import Swal from "sweetalert2";
+// import Swal from "sweetalert2";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 
 const AllUsers = () => {
     const axiosSecure = useAxios();
-    // , refetch
-    const { data: users = [] } = useQuery({
+    
+    const { data: users = [] , refetch } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
             const res = await axiosSecure.get('/user');
@@ -16,11 +17,11 @@ const AllUsers = () => {
     })
 
     const handleMakeAdmin = user =>{
-        axiosSecure.patch(`users/admin/${user._id}`)
+        axiosSecure.patch(`user/admin/${user._id}`)
         .then(res =>{
             console.log(res.data)
             if(res.data.modifiedCount > 0){
-                // refetch();
+                refetch();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -43,11 +44,11 @@ const AllUsers = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-
-                axiosSecure.delete(`/users/${user._id}`)
+             
+                axiosSecure.delete(`/user/${user._id}`)
                     .then(res => {
                         if (res.data.deletedCount > 0) {
-                            // refetch();
+                            refetch();
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Your file has been deleted.",
