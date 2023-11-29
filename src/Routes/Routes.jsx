@@ -27,6 +27,7 @@ import ActivityLog from "../Pages/Dashboard/ActivityLog/ActivityLog";
 import UserProfileSettings from "../Pages/Dashboard/UserProfileSettings/UserProfileSettings";
 import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/RecommendedClasses";
 import TrainerHome from "../Pages/Dashboard/TrainerHome/TrainerHome";
+import Contact from "../Pages/Contact/Contact";
 
 
 
@@ -43,6 +44,10 @@ import TrainerHome from "../Pages/Dashboard/TrainerHome/TrainerHome";
             element: <Home></Home>,
             loader : () => fetch('http://localhost:5000/features'),
           },
+          {
+            path: "/contact",
+            element: <Contact></Contact>
+          }, 
           {
             path: "/login",
             element: <Login></Login>

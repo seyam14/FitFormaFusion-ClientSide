@@ -99,6 +99,11 @@ const Dashboard = () => {
                             <FaHome></FaHome>
                             Home</NavLink>
                     </li>
+                    <li>
+                        <NavLink to="/contact">
+                            <FaHome></FaHome>
+                            Contact</NavLink>
+                    </li>
                 </ul>
             </div>
             {/* dashboard content */}
