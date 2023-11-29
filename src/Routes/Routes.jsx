@@ -28,6 +28,7 @@ import UserProfileSettings from "../Pages/Dashboard/UserProfileSettings/UserProf
 import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/RecommendedClasses";
 import TrainerHome from "../Pages/Dashboard/TrainerHome/TrainerHome";
 import Contact from "../Pages/Contact/Contact";
+import ManageSlots from "../Pages/Dashboard/ManageSlots/ManageSlots";
 
 
 
@@ -107,10 +108,14 @@ import Contact from "../Pages/Contact/Contact";
             path: 'classes',
             element: <RecommendedClasses></RecommendedClasses>
           },
-          // 
+          // trainer
           {
             path: 'trainerHome',
             element: <TrainerHome></TrainerHome>
+          },
+          {
+            path: 'slots',
+            element: <ManageSlots></ManageSlots>
           },
   
   
