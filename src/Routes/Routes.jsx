@@ -29,6 +29,8 @@ import RecommendedClasses from "../Pages/Dashboard/RecommendedClasses/Recommende
 import TrainerHome from "../Pages/Dashboard/TrainerHome/TrainerHome";
 import Contact from "../Pages/Contact/Contact";
 import ManageSlots from "../Pages/Dashboard/ManageSlots/ManageSlots";
+import ManageMember from "../Pages/Dashboard/ManageMember/ManageMember";
+import TrainerRoute from "../Pages/PrivateRoute/TrainerRoute";
 
 
 
@@ -111,12 +113,17 @@ import ManageSlots from "../Pages/Dashboard/ManageSlots/ManageSlots";
           // trainer
           {
             path: 'trainerHome',
-            element: <TrainerHome></TrainerHome>
+            element: <TrainerRoute><TrainerHome></TrainerHome></TrainerRoute> 
           },
           {
             path: 'slots',
-            element: <ManageSlots></ManageSlots>
+            element: <TrainerRoute><ManageSlots></ManageSlots></TrainerRoute>
           },
+          {
+            path: 'member',
+            element:<TrainerRoute><ManageMember></ManageMember></TrainerRoute>
+          },
+          
   
   
             // admin 
