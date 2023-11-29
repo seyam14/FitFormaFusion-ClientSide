@@ -15,7 +15,6 @@ const Payment = () => {
       subHeading="clear your due"
       heading="Payment"
     ></SectionTitle>
-        <h2 className='text-5xl font-mono font-semibold text-center mt-5'>Payment Here</h2>
         <Elements stripe={stripePromise} >
           <CheckOutForm salary={salary} trainerId={_id}></CheckOutForm>
         </Elements>
