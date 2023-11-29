@@ -69,6 +69,26 @@ const Dashboard = () => {
                            <FaHome></FaHome>
                            Trainer Home</NavLink>
                    </li>
+                        <li>
+                       <NavLink to="/dashboard/slots">
+                           <FaHome></FaHome>
+                           Manage Slots</NavLink>
+                   </li>
+                        <li>
+                       <NavLink to="/dashboard/member">
+                           <FaHome></FaHome>
+                           Manage member</NavLink>
+                   </li>
+                        <li>
+                       <NavLink to="/dashboard/newForum">
+                           <FaHome></FaHome>
+                           Add new Forum</NavLink>
+                   </li>
+                        <li>
+                       <NavLink to="/dashboard/newClass">
+                           <FaHome></FaHome>
+                           Add new Class</NavLink>
+                   </li>
 
                   </>
 
