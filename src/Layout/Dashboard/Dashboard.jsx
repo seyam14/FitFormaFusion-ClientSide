@@ -1,8 +1,9 @@
 import { IoMdFitness } from 'react-icons/io';
-import { FaEnvelope, FaHome, FaUsers } from "react-icons/fa";
+import { FaEnvelope, FaHome, FaUsers, FaWpforms } from "react-icons/fa";
 import { RiUserSettingsFill } from "react-icons/ri";
 import { SiGoogleclassroom, SiTrainerroad, SiWheniwork } from "react-icons/si";
-import { FaSackDollar } from "react-icons/fa6";
+import { MdViewTimeline } from "react-icons/md";
+import { FaSackDollar, FaUserGroup } from "react-icons/fa6";
 import { NavLink, Outlet } from "react-router-dom";
 import useAdmin from '../../Component/Hooks/useAdmin';
 import useTrainer from '../../Component/Hooks/useTrainer';
@@ -71,22 +72,22 @@ const Dashboard = () => {
                    </li>
                         <li>
                        <NavLink to="/dashboard/slots">
-                           <FaHome></FaHome>
+                           <MdViewTimeline />
                            Manage Slots</NavLink>
                    </li>
                         <li>
                        <NavLink to="/dashboard/member">
-                           <FaHome></FaHome>
+                            <FaUserGroup />
                            Manage member</NavLink>
                    </li>
                         <li>
                        <NavLink to="/dashboard/newForum">
-                           <FaHome></FaHome>
+                              <FaWpforms />
                            Add new Forum</NavLink>
                    </li>
                         <li>
                        <NavLink to="/dashboard/newClass">
-                           <FaHome></FaHome>
+                             <SiGoogleclassroom/>
                            Add new Class</NavLink>
                    </li>
 
