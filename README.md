@@ -1,6 +1,6 @@
 # FitFormaFusion(Fitness Tracker Website)
 
-## [client side live link]()
+## [client side live link](https://scintillating-sprite-a0bad8.netlify.app)
 
 ##  Project Features
 
