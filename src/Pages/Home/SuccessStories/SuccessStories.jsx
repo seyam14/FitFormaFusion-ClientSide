@@ -11,7 +11,7 @@ const SuccessStories = () => {
     const [SuccessStories, setSuccessStories] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/SuccessStories')
+        fetch('https://b8a12-server-side-seyam14.vercel.app/SuccessStories')
             .then(res => res.json())
             .then(data => setSuccessStories(data))
     }, [])

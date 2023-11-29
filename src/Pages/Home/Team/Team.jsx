@@ -11,7 +11,7 @@ const Team = () => {
     const [trainers, setTrainer] = useState([]);
     
     useEffect(() => {
-        fetch('http://localhost:5000/trainer')
+        fetch('https://b8a12-server-side-seyam14.vercel.app/trainer')
             .then(res => res.json())
             .then(data => setTrainer(data))
     }, [])

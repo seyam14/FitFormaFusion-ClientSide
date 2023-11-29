@@ -12,7 +12,7 @@ const Trainer = () => {
       // Fetch trainers from the backend API when the component mounts
       const fetchTrainers = async () => {
         try {
-          const response = await fetch('http://localhost:5000/trainer');
+          const response = await fetch('https://b8a12-server-side-seyam14.vercel.app/trainer');
           const data = await response.json();
           setTrainers(data);
         } catch (error) {

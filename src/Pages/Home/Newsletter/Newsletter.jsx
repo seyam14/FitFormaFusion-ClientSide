@@ -16,7 +16,7 @@ const Newsletter = () => {
       }
 
       // Make a POST request to save the data in the database
-      const response = await axios.post('http://localhost:5000/newsletterInfo', { name, email });
+      const response = await axios.post('https://b8a12-server-side-seyam14.vercel.app/newsletterInfo', { name, email });
 
       // Handle success
       Swal.fire({

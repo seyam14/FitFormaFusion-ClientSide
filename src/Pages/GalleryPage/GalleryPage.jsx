@@ -23,7 +23,7 @@ const GalleryPage = () => {
 
       setLoading(true);
 
-      axios.get('http://localhost:5000/photo', {
+      axios.get('https://b8a12-server-side-seyam14.vercel.app/photo', {
               params: {
                   page: activePage,
                   size: LIMIT,

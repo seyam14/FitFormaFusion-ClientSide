@@ -26,7 +26,7 @@ const BecomeTrainer = () => {
     console.log(BecomeTrainer);
 
          // send data to the server
-         fetch(`http://localhost:5000/becomeTrainer`, {
+         fetch(`https://b8a12-server-side-seyam14.vercel.app/becomeTrainer`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -29,7 +29,7 @@ const googleSignIn = () => {
       if (currentUser) {
         // get token and store client
         const userInfo = { email: currentUser.email };
-        axios.post('http://localhost:5000/jwt', userInfo)
+        axios.post('https://b8a12-server-side-seyam14.vercel.app/jwt', userInfo)
             .then(res => {
                 if (res.data.token) {
                     localStorage.setItem('access-token', res.data.token);

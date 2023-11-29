@@ -11,7 +11,7 @@ const TrainerDetails = () => {
 
   useEffect(() => {
     if (_id) {
-      axios.get(`http://localhost:5000/trainer/${_id}`)
+      axios.get(`https://b8a12-server-side-seyam14.vercel.app/trainer/${_id}`)
         .then(res => res.data)
         .then(data => setData(data))
         .catch(error => console.error('Error fetching data:', error));

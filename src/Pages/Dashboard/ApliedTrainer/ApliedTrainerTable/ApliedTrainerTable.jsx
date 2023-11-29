@@ -11,7 +11,7 @@ const ApliedTrainerTable = ({ item, reFetch }) => {
 
   const handleConfirmation = async () => {
     try {
-      const res = await axios.patch(`http://localhost:5000/becomeTrainer/${_id}`);
+      const res = await axios.patch(`https://b8a12-server-side-seyam14.vercel.app/becomeTrainer/${_id}`);
       console.log(res.data);
       reFetch();
       Swal.fire({

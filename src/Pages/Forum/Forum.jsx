@@ -12,7 +12,7 @@ const Forum = () => {
   const [currentPostIndex, setCurrentPostIndex] = useState(0);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/posts?page=${currentPage}`)
+    axios.get(`https://b8a12-server-side-seyam14.vercel.app/posts?page=${currentPage}`)
       .then(response => {
         setPosts(response.data.posts);
         setTotalPages(response.data.totalPages);
@@ -29,7 +29,7 @@ const Forum = () => {
 
     console.log(`Upvoting post ${postId}`);
     // Upvoting logic remains unchanged
-    axios.post(`http://localhost:5000/posts/${postId}/upvote`)
+    axios.post(`https://b8a12-server-side-seyam14.vercel.app/posts/${postId}/upvote`)
       .then(response => {
         setPosts(prevPosts => {
           return prevPosts.map(post => {
@@ -51,7 +51,7 @@ const Forum = () => {
 
     console.log(`Downvoting post ${postId}`);
     // Downvoting logic remains unchanged
-    axios.post(`http://localhost:5000/posts/${postId}/downvote`)
+    axios.post(`https://b8a12-server-side-seyam14.vercel.app/posts/${postId}/downvote`)
       .then(response => {
         setPosts(prevPosts => {
           return prevPosts.map(post => {

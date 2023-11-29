@@ -9,7 +9,7 @@ const ApliedTrainer = () => {
     const [reloadData, setReloaddata] = useState(true);
     
     useEffect(() => {
-        axios.get('http://localhost:5000/becomeTrainer')
+        axios.get('https://b8a12-server-side-seyam14.vercel.app/becomeTrainer')
             .then(res => setData(res.data))
     }, [])
 

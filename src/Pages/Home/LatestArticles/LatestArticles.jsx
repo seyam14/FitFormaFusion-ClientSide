@@ -9,7 +9,7 @@ const LatestArticles = () => {
         const [articles, setArticles] = useState([]);
     
         useEffect(() => {
-            fetch('http://localhost:5000/latestArticles')
+            fetch('https://b8a12-server-side-seyam14.vercel.app/latestArticles')
                 .then(res => res.json())
                 .then(data => setArticles(data))
         }, [])

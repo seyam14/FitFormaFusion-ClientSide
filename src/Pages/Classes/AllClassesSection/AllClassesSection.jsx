@@ -9,7 +9,7 @@ const AllClassesSection = () => {
   useEffect(() => {
     const fetchTrainersData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/trainer');
+        const response = await axios.get('https://b8a12-server-side-seyam14.vercel.app/trainer');
         console.log('API Response:', response.data);
 
         if (Array.isArray(response.data)) {

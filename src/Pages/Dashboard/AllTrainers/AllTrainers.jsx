@@ -9,7 +9,7 @@ const AllTrainers = () => {
     const [data, setData] = useState([]);
     
         useEffect(() => {
-            axios.get('http://localhost:5000/trainer')
+            axios.get('https://b8a12-server-side-seyam14.vercel.app/trainer')
                 .then(res => setData(res.data))
         }, [])
     

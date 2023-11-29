@@ -6,7 +6,7 @@ const RecommendedClasses = () => {
   const [recommendedClasses, setRecommendedClasses] = useState([]);
 
   useEffect(() => {
-    const apiUrl = 'http://localhost:5000/trainer';
+    const apiUrl = 'https://b8a12-server-side-seyam14.vercel.app/trainer';
 
     axios.get(apiUrl)
       .then(response => {

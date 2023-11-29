@@ -45,7 +45,7 @@ import TrainerRoute from "../Pages/PrivateRoute/TrainerRoute";
           {
             path: "/",
             element: <Home></Home>,
-            loader : () => fetch('http://localhost:5000/features'),
+            loader : () => fetch('https://b8a12-server-side-seyam14.vercel.app/features'),
           },
           {
             path: "/contact",
@@ -70,7 +70,7 @@ import TrainerRoute from "../Pages/PrivateRoute/TrainerRoute";
           {
             path: "/trainerdetails/:id",
             element:<Trainerdetails></Trainerdetails>,
-            loader: ({params}) => fetch(`http://localhost:5000/trainer/${params.id}`)
+            loader: ({params}) => fetch(`https://b8a12-server-side-seyam14.vercel.app/trainer/${params.id}`)
           },
           {
             path: "/becometrainer",

@@ -35,7 +35,7 @@ const Register = () => {
           const user = {name,photo, email, createdAt: createdAt };
   
           // Send user data to your server (Assuming you have a server)
-          fetch('http://localhost:5000/user', {
+          fetch('https://b8a12-server-side-seyam14.vercel.app/user', {
             method: 'POST',
             headers: {
               'content-type': 'application/json'

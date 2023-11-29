@@ -24,7 +24,7 @@ const Login = () => {
                 email: result.user?.email,
                 name: result.user?.displayName
             }
-            axios.post('http://localhost:5000/user', userInfo)
+            axios.post('https://b8a12-server-side-seyam14.vercel.app/user', userInfo)
             .then(res =>{
                 console.log(res.data);
                 Swal.fire("Login Successful!", "You are now logged in.", "success");

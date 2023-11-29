@@ -20,7 +20,7 @@ const UserProfileSettings = () => {
 
     try {
       // Send data to the server
-      const response = await fetch(`http://localhost:5000/user/:id`, {
+      const response = await fetch(`https://b8a12-server-side-seyam14.vercel.app/user/:id`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
