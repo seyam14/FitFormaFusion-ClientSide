@@ -1,77 +1,101 @@
-import { useState, useEffect } from 'react';
+import { useContext, useState } from 'react';
 import SectionTitle from '../../../Component/SectionTitle/SectionTitle';
+import Swal from 'sweetalert2';
+import { AuthContext } from '../../../AuthProvider/AuthProvider';
 
 const UserProfileSettings = () => {
-  // State to store user data
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-  });
+  const { user } = useContext(AuthContext);
+  const [name, setName] = useState('');
 
-  // State to manage form inputs
-  const [editedUser, setEditedUser] = useState({ ...user });
+  const handleUser = async (e) => {
+    e.preventDefault();
 
-  // Simulate fetching user data from a database
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await fetch('http://localhost:5000/user'); // Replace with your API endpoint
-        const userData = await response.json();
-
-        // Update user state with fetched data
-        setUser(userData);
-        setEditedUser(userData);
-      } catch (error) {
-        console.error('Error fetching user data:', error);
-      }
+    // Create a FormData object to handle form data
+    const form = new FormData(e.currentTarget);
+    const updateUser = {
+      name: form.get('name'),
     };
 
-    fetchUserData();
-  }, []); // Empty dependency array ensures the effect runs only once, similar to componentDidMount
+    try {
+      // Send data to the server
+      const response = await fetch(`http://localhost:5000/user`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updateUser),
+      });
 
-  // Function to handle input changes
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setEditedUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
-  };
+      if (!response.ok) {
+        throw new Error(`Failed to update user. Status: ${response.status}`);
+      }
 
-  // Function to save changes
-  const saveChanges = () => {
-    // Assuming you have an API or backend to update user details
-    // Here, we're just updating the state for demonstration purposes
-    setUser(editedUser);
-    alert('Changes saved!');
+      const data = await response.json();
+
+      console.log(data);
+
+      if (data.user) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Updated Successfully',
+          icon: 'success',
+          confirmButtonText: 'Done',
+        });
+      } else {
+        // Handle the case where data.user is not present in the response
+        throw new Error('Unexpected response from the server');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle the error, show an alert, etc.
+      Swal.fire({
+        title: 'Error',
+        text: 'Failed to update user. Please try again later.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    }
   };
 
   return (
     <div>
       <SectionTitle subHeading="User Can Maintain" heading="Profile Settings" />
-      <form>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={editedUser.name}
-            onChange={handleInputChange}
-          />
+      
+      <form onSubmit={handleUser}>
+        <div className="md:flex mb-8">
+          <div className="form-control md:w-1/2">
+            <label className="label">
+              <span className="label-text"> E-mail</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="email"
+                value={user?.email || ''}
+                readOnly
+                className="input input-bordered w-full"
+              />
+            </label>
+          </div>
+          <div className="form-control md:w-1/2 ml-4">
+            <label className="label">
+              <span className="label-text"> Name</span>
+            </label>
+            <label className="input-group">
+              <input
+                type="text"
+                name="name"
+                placeholder="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="input input-bordered w-full"
+              />
+            </label>
+          </div>
         </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={editedUser.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <button className='btn btn-primary' onClick={saveChanges}>
-          Save Changes
+        <button type="submit" className="btn btn-primary">
+          updated Profile
         </button>
       </form>
     </div>
