@@ -1,11 +1,13 @@
 import { useContext, useState } from 'react';
 import SectionTitle from '../../../Component/SectionTitle/SectionTitle';
-import Swal from 'sweetalert2';
 import { AuthContext } from '../../../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
+// import axios from 'axios';
 
 const UserProfileSettings = () => {
   const { user } = useContext(AuthContext);
   const [name, setName] = useState('');
+
 
   const handleUser = async (e) => {
     e.preventDefault();
@@ -18,7 +20,7 @@ const UserProfileSettings = () => {
 
     try {
       // Send data to the server
-      const response = await fetch(`http://localhost:5000/user`, {
+      const response = await fetch(`http://localhost:5000/user/:id`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -60,8 +62,8 @@ const UserProfileSettings = () => {
   return (
     <div>
       <SectionTitle subHeading="User Can Maintain" heading="Profile Settings" />
-      
-      <form onSubmit={handleUser}>
+
+      <form  onSubmit={() =>handleUser}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
@@ -94,7 +96,7 @@ const UserProfileSettings = () => {
             </label>
           </div>
         </div>
-        <button type="submit" className="btn btn-primary">
+        <button  type="submit" className="btn btn-primary">
           updated Profile
         </button>
       </form>
