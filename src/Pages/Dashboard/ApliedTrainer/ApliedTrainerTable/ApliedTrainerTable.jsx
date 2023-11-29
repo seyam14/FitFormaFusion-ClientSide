@@ -1,25 +1,62 @@
-
 import axios from 'axios';
 import { FaEye } from 'react-icons/fa';
 import Swal from 'sweetalert2';
+import emailjs from 'emailjs-com';
 
-const ApliedTrainerTable = ({ item,reFetch }) => {
 
+emailjs.init('FOkhzyqNBrWXCKfZ7');
 
-  const {_id, name, email, age, AvailableTimeinaweek, AvailableTimeinaday, skills, role } = item;
+const ApliedTrainerTable = ({ item, reFetch }) => {
+  const { _id, name, email, age, AvailableTimeinaweek, AvailableTimeinaday, skills, role } = item;
 
-  const handleConfirmation = async() => {
-    const res = await axios.patch(`http://localhost:5000/becomeTrainer/${_id}`);
-    console.log(res.data);
-    reFetch();
-    Swal.fire({
-     title: 'Success!',
-     text: 'Trainer confirmation Successfully',
-     icon: 'success',
-     confirmButtonText: 'Cool'
- })
-     
-   };
+  const handleConfirmation = async () => {
+    try {
+      const res = await axios.patch(`http://localhost:5000/becomeTrainer/${_id}`);
+      console.log(res.data);
+      reFetch();
+      Swal.fire({
+        title: 'Success!',
+        text: 'Trainer confirmation Successfully',
+        icon: 'success',
+        confirmButtonText: 'Cool',
+      });
+    } catch (error) {
+      console.error('Error confirming trainer:', error);
+      Swal.fire({
+        title: 'Error!',
+        text: 'Failed to confirm trainer.',
+        icon: 'error',
+        confirmButtonText: 'Ok',
+      });
+    }
+  };
+
+  const handleRejection = () => {
+    emailjs.send('service_khj8eai', 'template_o4zwkcq', {
+      to_email: email,
+      // Add other template variables if needed
+    })
+      .then((response) => {
+        console.log('Email sent:', response);
+        // Handle success, e.g., show a success message
+        Swal.fire({
+          title: 'Email Sent!',
+          text: 'Rejection email sent successfully.',
+          icon: 'success',
+          confirmButtonText: 'Cool',
+        });
+      })
+      .catch((error) => {
+        console.error('Error sending email:', error);
+        // Handle error, e.g., show an error message
+        Swal.fire({
+          title: 'Error!',
+          text: 'Failed to send rejection email.',
+          icon: 'error',
+          confirmButtonText: 'Ok',
+        });
+      });
+  };
 
   return (
     <tr className="m-6">
@@ -42,17 +79,15 @@ const ApliedTrainerTable = ({ item,reFetch }) => {
             <form method="dialog">
               <button className="btn">Close</button>
             </form>
-            <button onClick={handleConfirmation} className="btn btn-success mr-10" >
+            <button onClick={handleConfirmation} className="btn btn-success mr-10">
               Confirm
             </button>
-            <button className="btn btn-error" >
+            <button onClick={handleRejection} className="btn btn-error">
               Reject
             </button>
           </div>
         </div>
       </dialog>
-      
-
     </tr>
   );
 };
