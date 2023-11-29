@@ -9,10 +9,11 @@ const useTrainer = () => {
     
     const { data: isTrainer, isPending: isTrainerLoading } = useQuery({
         queryKey: [user?.email, 'isTrainer'],
+        enabled : !!user?.email && !!localStorage.getItem('access-token'),
         queryFn: async () => {
             const res = await axiosSecure.get(`/user/trainer/${user.email}`);
             console.log(res.data);
-            return res.data?.admin;
+            return res.data?.trainer;
         }
     })
     return [isTrainer, isTrainerLoading]

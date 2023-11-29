@@ -13,7 +13,9 @@ import { Helmet } from 'react-helmet';
 const Dashboard = () => {
 
     const [isAdmin] = useAdmin();
+    console.log(isAdmin);
     const [isTrainer] = useTrainer();
+    console.log(isTrainer);
     // const isAdmin = true;
 
     return (
@@ -25,8 +27,8 @@ const Dashboard = () => {
             <div className="w-64 min-h-screen bg-purple-400">
                 <ul className="menu p-4">
                     {
-                        isAdmin ?
-                         <>
+                        isAdmin && 
+                        <>
                             <li>
                                 <NavLink to="/dashboard/adminHome">
                                     <FaHome></FaHome>
@@ -58,17 +60,23 @@ const Dashboard = () => {
                                 Balance</NavLink>
                             </li>
                         </>
-                        :
-                        isTrainer?
+                    }
+                    {
+                        isTrainer && 
                         <>
-                                 <li>
-                                <NavLink to="/dashboard/trainerHome">
-                                    <FaHome></FaHome>
-                                    Trainer Home</NavLink>
-                            </li>
+                        <li>
+                       <NavLink to="/dashboard/trainerHome">
+                           <FaHome></FaHome>
+                           Trainer Home</NavLink>
+                   </li>
 
-                        </>
-                        :
+                  </>
+
+                    }
+
+                    {
+
+                        isAdmin || isTrainer === false &&  
                         <>
                                 <li>
                                     <NavLink to="/dashboard/userHome">
@@ -91,7 +99,8 @@ const Dashboard = () => {
                                     Classes</NavLink>
                                 </li>
                         </>
-                     } 
+                    }
+                    
                     {/* shared nav links */}
                     <div className="divider"></div>
                     <li>

@@ -2,12 +2,20 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../../../assets/FFF.svg';
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import useAdmin from "../../../Component/Hooks/useAdmin";
+import useTrainer from "../../../Component/Hooks/useTrainer";
 
 const Navbar = () => {
     // eslint-disable-next-line no-undef
+    const [isAdmin]=useAdmin();
+    console.log(isAdmin);
+     const[isTrainer]=useTrainer();
+     console.log(isTrainer);
+
     const { user, logout } = useContext(AuthContext);
+    
     const handleLogout = () => {
-        logout().then((result) => console.log(result));
+        logout();
       };
     
     const navLinks = <>
@@ -24,9 +32,22 @@ const Navbar = () => {
     <li>
     <NavLink className="font-bold "  to='/classes'>Classes</NavLink>
     </li>
-    <li>
-        <NavLink className="font-bold"  to='/dashboard'>Dashboard</NavLink>
-    </li> 
+    {
+      user && isAdmin && <li>
+      <NavLink className="font-bold"  to='/dashboard/adminHome'>Dashboard</NavLink>
+  </li> 
+    }
+
+    {
+      user && isTrainer && <li>
+      <NavLink className="font-bold"  to='/dashboard/trainerHome'>Dashboard</NavLink>
+  </li> 
+    }
+    {
+      user && !!isAdmin || !!isTrainer ? "" : <li>
+      <NavLink className="font-bold"  to='/dashboard/userHome'>Dashboard</NavLink>
+  </li> 
+    }
     <li>
         <NavLink className="font-bold"  to='/forum'>Forum</NavLink>
     </li>    
