@@ -6,16 +6,16 @@ const Footer = () => {
         <footer className="footer p-10 bg-gray-700 text-white">
         <aside>
           <img  className='w-27 h-20' src={logo} alt="" />
-          <p>Copyright © 2023 - All right reserved by FitFormaFusion</p>
+          <p>Copyright ©{new Date().getFullYear()} - All right reserved by FitFormaFusion</p>
         </aside> 
         <nav>
           <header className="footer-title">Contact</header> 
           <p>Email : FitFormaFusion@gmail.com</p>
-          <p>Phone Number:(+880 1767649313) </p>
+          <p>Phone Number:(+880 17********) </p>
         </nav> 
         <nav>
           <header className="footer-title">Address</header> 
-          <p>Uttara,Dhaka, Bangladesh</p>
+          <p>Dhaka, Bangladesh</p>
         </nav>
         <nav>
         <div className=" space-x-4">
