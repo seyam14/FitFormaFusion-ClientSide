@@ -31,6 +31,7 @@ import Contact from "../Pages/Contact/Contact";
 import ManageSlots from "../Pages/Dashboard/ManageSlots/ManageSlots";
 import ManageMember from "../Pages/Dashboard/ManageMember/ManageMember";
 import TrainerRoute from "../Pages/PrivateRoute/TrainerRoute";
+import Balance from "../Pages/Dashboard/Balance/Balance";
 
 
 
@@ -149,6 +150,11 @@ import TrainerRoute from "../Pages/PrivateRoute/TrainerRoute";
               element:<AdminRoute><ApliedTrainer></ApliedTrainer></AdminRoute>
             },
 
+            {
+              path: 'balance',
+              element:<AdminRoute><Balance></Balance></AdminRoute> 
+              
+            },
             {
               path: 'users',
               element:<AdminRoute><AllUsers></AllUsers></AdminRoute> 
